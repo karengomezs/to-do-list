@@ -17,7 +17,7 @@ function addTask() {
     if (isValueEmpty) {
         return alert("please, add a new note");
     }
-    list.innerHTML += `<li class="toDo"> <input type="checkbox" class="check"> <span>${value}</span> </li>`;
+    list.innerHTML += `<li class="toDo"> <input type="checkbox" class="check"> <span class="text">${value}</span> </li>`;
     attacheListener();
 }
 
