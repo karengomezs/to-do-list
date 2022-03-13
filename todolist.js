@@ -12,6 +12,31 @@ function logKey(e) {
 
 function addTask() {
     var value = enterUser.value;
-    var task = document.querySelector(".list")
-    task.innerHTML += `<li><input type="checkbox" id="check"> ${value}</li>`
+    var list = document.querySelector(".list");
+    var isValueEmpty = value === "";
+    if (isValueEmpty) {
+        return alert("please, add a new note");
+    }
+    list.innerHTML += `<li class="toDo"> <input type="checkbox" class="check"> <span>${value}</span> </li>`;
+    attacheListener();
+}
+
+function attacheListener() {
+    var toDos = document.querySelectorAll(".toDo");
+    for (var toDo of toDos) {
+
+        toDo.addEventListener("click", handleClick);
+    }
+}
+
+function handleClick(e) {
+    var isInput = e.target.nodeName === "INPUT";
+
+
+    if (isInput) {
+        var sibling = e.target.nextElementSibling;
+
+        sibling.classList.toggle("done");
+
+    }
 }

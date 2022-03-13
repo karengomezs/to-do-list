@@ -58,9 +58,16 @@ body {
 }
 
 #buttonTask {
+    width: 30px;
     height: 30px;
     margin-left: 5px;
     margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 2rem;
+    background-color: rgb(168, 198, 253);
+    border-radius: 5px;
+    border-color: #000000;
 }
 
 .list {
@@ -80,4 +87,8 @@ body {
 .footer-text {
     color: white;
     font-size: 1.4rem;
+}
+
+.done {
+    text-decoration: line-through;
 }
