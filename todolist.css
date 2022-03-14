@@ -6,20 +6,20 @@
 
 html {
     font-size: 62.5%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 body {
-    /* background: linear-gradient(#c4ffe9, #7a7cf1); */
+    background: linear-gradient(135deg, #FFDDA1, #F7AEF8, #B388EB, #8093F1, #72DDF7);
     background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-family: 'Raleway', sans-serif;
 }
 
 .tittle {
-    color: rgb(138, 70, 70);
+    color: white;
 }
 
 .title-container {
@@ -27,6 +27,10 @@ body {
     justify-content: center;
     margin-top: 60px;
     font-size: 2rem;
+}
+
+.paragraph {
+    color: white;
 }
 
 .p-container {
@@ -40,10 +44,12 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
-    background-color: rgb(250, 226, 226);
-    border-color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    border: 2px #ffffff solid;
     width: 30vw;
     min-height: 400px;
+    box-shadow: 0px 0px 40px rgb(209, 205, 231);
 }
 
 .input-container {
@@ -57,8 +63,10 @@ body {
     height: 30px;
     width: 20vw;
     border-radius: 5px;
-    border-color: #000000;
+    border-color: #ffffff;
     margin-bottom: 10px;
+    border: 0;
+    text-indent: 10px;
 }
 
 #buttonTask {
@@ -69,22 +77,21 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     font-size: 2rem;
-    background-color: rgb(224, 169, 169);
-    border-radius: 5px;
-    border-color: #000000;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: 0;
 }
 
-.number-of {
-    margin-top: 5px;
-    background-color: #e09999;
+.number-container {
+    margin-top: 10px;
+    background-color: white;
     height: 30px;
-    width: 50px;
+    width: 80px;
     display: flex;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
     font-size: 2rem;
-    margin-bottom: 10 px;
+    margin-bottom: 10px;
+    border-radius: 3px;
 }
 
 .list {

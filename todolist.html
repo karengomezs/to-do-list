@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./todolist.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
     </div>
 
     <div class="p-container">
-        <p>write a task that you want to do in the next few days, when you have done it, press check!</p>
+        <p class="paragraph">Write a task that you want to do in the next few days, when you have done it, press check!</p>
     </div>
 
     <div class="task-container">
@@ -23,14 +24,18 @@
             <input type="text" placeholder="write your note here" id="input">
             <input type="button" value="+" id="buttonTask">
         </div>
-        <div class="number-of"></div>
+
+        <div class="number-container">
+            <span class="number-of">0 </span>
+            <p> of </p> <span class="total"> 0</span>
+        </div>
         <div class="list"></div>
     </div>
 
     <footer class="footer">
-        <p class="footer-text">Made with love, By: Karen G.</p>
+        <p class="footer-text">Made with ❤, By: Karen G.</p>
     </footer>
     <script src="todolist.js"></script>
-</body>+
+</body>
 
 </html>

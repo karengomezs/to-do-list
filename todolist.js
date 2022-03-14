@@ -17,7 +17,7 @@ function addTask() {
 
 
     if (isValueEmpty) {
-        return alert("please, add a new note");
+        return alert("Please, add a new note");
     }
     list.innerHTML += `<li class="toDo"> <input type="checkbox" class="check"> <span class="text">${value}</span> </li>`;
 
@@ -29,21 +29,19 @@ function addTask() {
 
 function attacheListener() {
 
-
     var toDos = document.querySelectorAll(".toDo");
-    var numberOf = document.querySelector(".number-of");
-    var attache = document.querySelectorAll(".done")
+    var total = document.querySelector(".total");
+    //var attache = document.querySelectorAll(".done")
     var numberOfNotes = toDos.length;
-    var taskOk = attache.length;
-    numberOf.innerHTML = `${taskOk} <p> / </p> ${numberOfNotes}`
-    numberOf.innerHTML = `${numberOfNotes}`;
+    //var taskOk = attache.length;
+    //numberOf.innerHTML = `${taskOk} <p> / </p> ${numberOfNotes}`
+    total.innerHTML = ` ${numberOfNotes} `;
 
     for (var toDo of toDos) {
 
         toDo.addEventListener("click", handleClick);
     }
 }
-
 
 function handleClick(e) {
     var isInput = e.target.nodeName === "INPUT";
@@ -53,11 +51,11 @@ function handleClick(e) {
 
         sibling.classList.toggle("done");
     }
-    var toDos = document.querySelectorAll(".toDo");
+    //var toDos = document.querySelectorAll(".toDo");
     var numberOf = document.querySelector(".number-of");
     var attache = document.querySelectorAll(".done")
-    var numberOfNotes = toDos.length;
+        //var numberOfNotes = toDos.length;
     var taskOk = attache.length;
-    numberOf.innerHTML = `${taskOk} <p> / </p> ${numberOfNotes}`
+    numberOf.innerHTML = ` ${taskOk} `
 
 }
