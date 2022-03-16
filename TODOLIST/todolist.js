@@ -3,6 +3,24 @@ buttonTask.addEventListener("click", addTask);
 var enterUser = document.getElementById("input");
 enterUser.addEventListener("keydown", logKey);
 
+const buttonDelete = document.querySelector(".delete-button");
+buttonDelete.addEventListener("click", deleteAll);
+
+function deleteAll() {
+    //console.log("quiero borrar");
+    const attacheElement = document.querySelectorAll(".done")
+        //console.log(done);
+    for (const toDo of attacheElement) {
+        //toDo.remove()
+        //console.log(attacheElement);
+        const parent = toDo.parentElement;
+        // console.log(parent);
+        parent.remove()
+
+    }
+}
+
+
 function init() {
     const toDos = readToDo("list");
 

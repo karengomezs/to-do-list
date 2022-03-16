@@ -94,6 +94,17 @@ body {
     border-radius: 3px;
 }
 
+.delete-button {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    background-color: rgb(238, 189, 167);
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 50%;
+}
+
 .list {
     list-style: none;
 }
