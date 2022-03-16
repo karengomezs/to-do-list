@@ -7,22 +7,36 @@ const buttonDelete = document.querySelector(".delete-button");
 buttonDelete.addEventListener("click", deleteAll);
 
 function deleteAll() {
-    //console.log("quiero borrar");
-    const attacheElement = document.querySelectorAll(".done")
-        //console.log(done);
-    for (const toDo of attacheElement) {
-        //toDo.remove()
-        //console.log(attacheElement);
+    const savedTodos = readToDo("list");
+    const doneTodos = document.querySelectorAll(".done")
+    const newToSave = [];
+
+
+
+    for (const toDo of doneTodos) {
         const parent = toDo.parentElement;
-        // console.log(parent);
         parent.remove()
 
+        for (const saveToDo of savedTodos) {
+
+            const isDifferent = toDo.innerText !== saveToDo;
+            //console.log(toDo.innerText, saveToDo, isSame);
+
+            if (isDifferent) {
+                newToSave.push(saveToDo);
+            }
+
+        }
+
     }
+    saveToDo("list", newToSave)
 }
 
 
 function init() {
     const toDos = readToDo("list");
+
+    //console.log('todos', toDos);
 
     for (const toDo of toDos) {
         addTask(toDo);
