@@ -3,15 +3,26 @@ buttonTask.addEventListener("click", addTask);
 var enterUser = document.getElementById("input");
 enterUser.addEventListener("keydown", logKey);
 
+function init() {
+    const toDos = readToDo("list");
+
+    for (const toDo of toDos) {
+        addTask(toDo);
+    }
+
+}
+init();
 
 function logKey(e) {
     if (e.keyCode === 13) {
-        addTask();
+        var value = enterUser.value;
+        addTask(value);
+        const preview = readToDo("list");
+        saveToDo("list", [...preview, value]);
     }
 }
 
-function addTask() {
-    var value = enterUser.value;
+function addTask(value) {
     var list = document.querySelector(".list");
     var isValueEmpty = value === "";
 
@@ -31,10 +42,7 @@ function attacheListener() {
 
     var toDos = document.querySelectorAll(".toDo");
     var total = document.querySelector(".total");
-    //var attache = document.querySelectorAll(".done")
     var numberOfNotes = toDos.length;
-    //var taskOk = attache.length;
-    //numberOf.innerHTML = `${taskOk} <p> / </p> ${numberOfNotes}`
     total.innerHTML = ` ${numberOfNotes} `;
 
     for (var toDo of toDos) {
@@ -51,11 +59,19 @@ function handleClick(e) {
 
         sibling.classList.toggle("done");
     }
-    //var toDos = document.querySelectorAll(".toDo");
     var numberOf = document.querySelector(".number-of");
     var attache = document.querySelectorAll(".done")
-        //var numberOfNotes = toDos.length;
     var taskOk = attache.length;
     numberOf.innerHTML = ` ${taskOk} `
+}
 
+function saveToDo(key, value) {
+    const valueToSave = JSON.stringify(value)
+    localStorage.setItem(key, valueToSave);
+}
+
+function readToDo(key) {
+    const keyValue = localStorage.getItem(key);
+    const final = JSON.parse(keyValue);
+    return final
 }
