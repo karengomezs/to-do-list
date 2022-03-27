@@ -1,7 +1,11 @@
-var buttonTask = document.getElementById("buttonTask");
-buttonTask.addEventListener("click", addTask);
-var enterUser = document.getElementById("input");
+const enterUser = document.getElementById("input");
 enterUser.addEventListener("keydown", logKey);
+const buttonTask = document.getElementById("buttonTask");
+buttonTask.addEventListener("click", () => {
+    addTask(enterUser.value)
+        //console.log(enterUser.value);
+        //hago una función anónima porque si coloco addTask de inmediato con el parámetro me ejecuta de inmediato la función sin siquiera el usuario dar click
+});
 const buttonDelete = document.querySelector(".delete-button");
 buttonDelete.addEventListener("click", function() {
     deleteAll()
@@ -41,18 +45,16 @@ function updateStorage() {
             if (isDifferent) {
                 newToSave.push(saveToDo);
             }
-
         }
-
     }
     saveToDo("list", newToSave)
         //acá actualizo el storage
 }
 
 function init() {
-    const toDos = readToDo("list");
+    const toDos = readToDo("list") || [];
 
-    //console.log('todos', toDos);
+    //console.log(toDos);
 
     for (const toDo of toDos) {
         addTask(toDo);
@@ -76,8 +78,9 @@ function logKey(e) {
 
 
 function addTask(value) {
-    var list = document.querySelector(".list");
-    var isValueEmpty = value === "";
+    ///console.log(value, "juan");
+    const list = document.querySelector(".list");
+    const isValueEmpty = value === "";
 
     if (isValueEmpty) {
         return alert("Please, add a new note");
