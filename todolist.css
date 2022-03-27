@@ -25,7 +25,7 @@ body {
 .title-container {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    padding-top: 10%;
     font-size: 2rem;
 }
 
@@ -37,20 +37,19 @@ body {
     display: flex;
     justify-content: center;
     font-size: 2rem;
+    padding: 12px 0;
 }
 
 .task-container {
     display: flex;
     flex: 1;
     flex-direction: column;
-    margin-top: 30px;
-    margin-bottom: 60px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     border: 2px #ffffff solid;
-    width: 30vw;
-    min-height: 400px;
+    width: clamp(30rem, 80vw, 50rem);
     box-shadow: 0px 0px 40px rgb(209, 205, 231);
+    margin-bottom: 12px;
 }
 
 .input-container {
@@ -104,7 +103,7 @@ body {
     height: 40px;
     border: 0;
     border-radius: 50%;
-    font-size: 30px;
+    font-size: clamp(1rem, 6.5vw, 2.5rem);
 }
 
 .list {
@@ -143,12 +142,9 @@ body {
     font-size: 1.8rem;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 768px) {
     .p-container {
         max-width: 80vw;
         text-align: center;
-    }
-    .task-container {
-        width: 80%;
     }
 }
