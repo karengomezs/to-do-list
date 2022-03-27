@@ -36,7 +36,7 @@ body {
 .p-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     font-size: 2rem;
 }
 
@@ -44,11 +44,13 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    margin-bottom: 60px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     border: 2px #ffffff solid;
     width: 30vw;
     min-height: 400px;
+    /* max-height: 410px; */
     box-shadow: 0px 0px 40px rgb(209, 205, 231);
 }
 
@@ -107,6 +109,7 @@ body {
 
 .list {
     list-style: none;
+    overflow: auto;
 }
 
 .footer {
@@ -114,8 +117,6 @@ body {
     display: flex;
     justify-content: center;
     width: 100vw;
-    margin-top: auto;
-    height: 2vw;
     align-items: center;
 }
 
