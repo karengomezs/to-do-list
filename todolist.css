@@ -31,6 +31,7 @@ body {
 
 .paragraph {
     color: white;
+    font-style: italic;
 }
 
 .p-container {
@@ -38,6 +39,7 @@ body {
     justify-content: center;
     font-size: 2rem;
     padding: 20px 0;
+    font-weight: 300;
 }
 
 .task-container {
@@ -60,7 +62,7 @@ body {
 }
 
 #input {
-    height: 30px;
+    height: 40px;
     width: 70%;
     border-radius: 5px;
     border-color: #ffffff;
@@ -70,6 +72,7 @@ body {
 }
 
 #buttonTask {
+    max-width: 30px;
     width: 30px;
     height: 30px;
     margin-left: 5px;
@@ -103,7 +106,8 @@ body {
     height: 40px;
     border: 0;
     border-radius: 50%;
-    font-size: clamp(1rem, 6.5vw, 2.5rem);
+    font-size: 20px;
+    /* clamp(1rem, 6.5vw, 2.5rem); */
 }
 
 .list {
