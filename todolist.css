@@ -31,7 +31,7 @@ body {
 
 .paragraph {
     color: white;
-    font-style: italic;
+    font-family: 'Raleway', sans-serif;
 }
 
 .p-container {
