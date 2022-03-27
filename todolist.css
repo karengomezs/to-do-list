@@ -62,7 +62,7 @@ body {
 
 #input {
     height: 30px;
-    width: 20vw;
+    width: 70%;
     border-radius: 5px;
     border-color: #ffffff;
     margin-bottom: 10px;
@@ -97,18 +97,20 @@ body {
 
 .delete-button {
     display: flex;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
     justify-content: center;
-    background-color: rgb(238, 189, 167);
-    width: 30px;
-    height: 30px;
+    background-color: rgb(255, 255, 255);
+    width: 40px;
+    height: 40px;
     border: 0;
     border-radius: 50%;
+    font-size: 30px;
 }
 
 .list {
     list-style: none;
     overflow: auto;
+    flex: 1;
 }
 
 .footer {
@@ -139,4 +141,14 @@ body {
 
 .text {
     font-size: 1.8rem;
+}
+
+@media (max-width: 390px) {
+    .p-container {
+        max-width: 80vw;
+        text-align: center;
+    }
+    .task-container {
+        width: 80%;
+    }
 }
