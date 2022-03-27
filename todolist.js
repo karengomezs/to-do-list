@@ -6,7 +6,14 @@ const buttonDelete = document.querySelector(".delete-button");
 buttonDelete.addEventListener("click", function() {
     deleteAll()
     updateStorage()
+    updateCounters()
 });
+
+function updateCounters() {
+    var toDos = document.querySelectorAll(".toDo");
+    countTodos(toDos)
+    countDoneTodos()
+}
 
 function deleteAll() {
     const doneTodos = document.querySelectorAll(".done") //busco que voy a eliminar
@@ -16,11 +23,12 @@ function deleteAll() {
         parent.remove() //quiero eliminar el padre del que tenga la clase .done (contenedor), se lo lleva todo de una vez
     }
     //den esta función solo elimino
+
 }
 
 function updateStorage() {
     const doneTodos = document.querySelectorAll(".done") //busco que voy a eliminar
-    const savedTodos = readToDo("list");
+    const savedTodos = readToDo("list"); //este list se saca del key del storage
     const newToSave = [];
 
     for (const toDo of doneTodos) {
@@ -54,6 +62,8 @@ function init() {
 
 init(); //se ejecuta de primero porque arriba la cree y la ejcuté afuera
 
+
+
 function logKey(e) {
     if (e.keyCode === 13) {
         var value = enterUser.value;
@@ -69,7 +79,6 @@ function addTask(value) {
     var list = document.querySelector(".list");
     var isValueEmpty = value === "";
 
-
     if (isValueEmpty) {
         return alert("Please, add a new note");
     }
@@ -77,11 +86,8 @@ function addTask(value) {
 
     enterUser.value = "";
 
-
-    var toDos = document.querySelectorAll(".toDo");
-
     attacheListener();
-    countTodos(toDos);
+    updateCounters();
 }
 
 function handleClick(e) {
